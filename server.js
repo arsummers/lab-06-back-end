@@ -56,16 +56,22 @@ function Location(data) {
 }
 
 function searchWeather(query) {
+  const weatherArray=[];
   const darkSkyData = require('./data/darksky.json');
-  const weather = new Weather(darkSkyData);
-  console.log(weather);
-  weather.search_query = query;
-  return weather;
+  console.log(darkSkyData.daily);
+  darkSkyData.daily.data.forEach(day =>{
+    weatherArray.push(new Weather(day));
+  })
+  console.log('weather Array', weatherArray);
+  weatherArray.search_query = query;
+  return weatherArray;
 }
 
-function Weather(data){
+function Weather(weatherData){
   console.log('got to weather constructor');
-  this.forecast = data.hourly.summary;
+  this.forecast = weatherData.summary;
   console.log('hi', this.forecast);
-  this.time = data.hourly.data.time;
+  let goodTime = weatherData.time;
+  this.time= new Date(goodTime);
+  console.log('hi', this.time);
 }
