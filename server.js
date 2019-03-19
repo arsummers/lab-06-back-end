@@ -17,6 +17,7 @@ app.get('/location', (request, response) => {
   const locationData = searchToLatLong(request.query.data)
   console.log('location', request.query.data);
   response.send(locationData);
+  response.status(500).send('Sorry, something went wrong');
 });
 
 //path to weather
