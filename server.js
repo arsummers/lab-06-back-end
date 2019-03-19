@@ -63,9 +63,10 @@ function searchWeather(query) {
   return weather;
 }
 
-function Weather(data){
+function Weather(weatherData){
   console.log('got to weather constructor');
-  this.forecast = data.hourly.summary;
+  this.forecast = weatherData.hourly.summary;
   console.log('hi', this.forecast);
-  this.time = data.hourly.data.time;
+  this.time = weatherData.hourly.data[0].time;
+  console.log('hi', this.time);
 }
