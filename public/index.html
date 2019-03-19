@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>City Explorer</title>
+  <link rel="stylesheet" href="./styles/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Acme|Josefin+Sans|Muli" rel="stylesheet">
+
+    <!-- Template for errors -->
+    <script type="text/x-handlebars-template" id="error-template">
+      <p> {{ responseText }}</p>
+    </script>
+
+     <!-- Template for age of data-->
+  <script type="text/x-handlebars-template" id="time-template">
+    <p>{{ date-age }}</p>
+  </script>
+
+    <!-- Template for weather data -->
+    <script type="text/x-handlebars-template" id="weather-results-template">
+      <li>
+        The forecast for {{ time }} is: {{ forecast }}
+      </li>
+    </script>
+
+      <!-- Template for Meetup data -->
+  <script type="text/x-handlebars-template" id="meetups-results-template">
+    <li>
+      <a href="{{ link }}">{{ name }}</a>
+      <p>Hosted by: {{ host }}</p>
+      <p>Created on: {{ creation_date }}</p>
+    </li>
+  </script>
+
+   <!-- Template for trail data -->
+   <script type="text/x-handlebars-template" id="trails-results-template">
+    <li>
+      <p>Hike Name: <a href="{{ trail_url }}">{{ name }}</a>, Location: {{ location }}, Distance: {{ length }} miles</p>
+      <p>On {{ condition_date }} at {{ condition_time }}, trail conditions were reported as: {{ conditions }}</p>
+      <p>This trail has a rating of {{ stars }} stars (out of {{ star_votes }} votes)</p>
+      <p>{{ summary }}</p>
+    </li>
+  </script>
+
+<body>
+    <header>
+        <h1>City Explorer</h1>
+        <p>Enter a location below to learn about the weather, events, restaurants, movies filmed there, and more!</p>
+      </header>
+
+  
+</body>
+</html>
