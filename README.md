@@ -3,7 +3,7 @@
 # Lab 6 - back end server
 
 **Author**: Bonnie Wang, Aliya Summers
-**Version**: 1.0.5 (increment the patch/fix version number if you make more commits past your first submission)
+**Version**: 1.1.0 (increment the patch/fix version number if you make more commits past your first submission)
 
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
@@ -33,12 +33,12 @@ base front-end code from codefellows
 
 -->
 
-Number and name of feature: Feature 1 - 
+Number and name of feature: Feature 1 - Location and Weather
 
 Estimate of time needed to complete: 3 hours
 
-Start time: 9:45
+Start time: 9:45am
 
-Finish time: _____
+Finish time: 1:40pm
 
-Actual time needed to complete: _____
+Actual time needed to complete: 4 hours
