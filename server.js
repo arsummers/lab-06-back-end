@@ -19,6 +19,14 @@ app.get('/location', (request, response) => {
   response.send(locationData);
 });
 
+//path to weather
+app.get('/weather', (request, response)=>{
+  console.log('hit the weather function');
+  const weatherData = searchWeather(request.query.data)
+  response.send(weatherData);
+});
+
+
 //TEST ROUTE
 app.get('/testing', (request, response) =>{
   console.log('hit the test route');
@@ -45,4 +53,19 @@ function Location(data) {
   this.formatted_query = data.results[0].formatted_address;
   this.latitude = data.results[0].geometry.location.lat;
   this.longitude = data.results[0].geometry.location.lng;
+}
+
+function searchWeather(query) {
+  const darkSkyData = require('./data/darksky.json');
+  const weather = new Weather(darkSkyData);
+  console.log(weather);
+  weather.search_query = query;
+  return weather;
+}
+
+function Weather(data){
+  console.log('got to weather constructor');
+  this.forecast = data.hourly.summary;
+  console.log('hi', this.forecast);
+  this.time = data.hourly.data.time;
 }
