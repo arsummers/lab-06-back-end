@@ -14,7 +14,7 @@ const PORT = process.env.PORT;
 app.get('/location', (request, response) => {
   console.log('request at 14', request.query);
 
-  //const locationData = searchToLatLong(request.query.data)
+  const locationData = searchToLatLong(request.query.data)
   console.log('location', request.query.data);
   response.send(locationData);
 });
