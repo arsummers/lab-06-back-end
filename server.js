@@ -10,7 +10,7 @@ app.use(cors());
 
 const PORT = process.env.PORT;
 
-app.get('./location', (request, response) => {
+app.get('/location', (request, response) => {
   const locationData = searchToLatLong(request.query.data)
   console.log('location', request.query.data);
   response.send(locationData);
@@ -29,6 +29,7 @@ app.listen(PORT, () =>console.log(`listening on PORT ${PORT}`));
 //Helper functions
 
 function searchToLatLong(query) {
+  console.log('search to lat long ran');
   const geoData = require('./data/geo.json');
   const location = new Location(geoData);
   location.search_query = query;
